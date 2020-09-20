@@ -3,13 +3,10 @@
 
 name: Node.js Package
 
-on:
-  push:
-    branches:
-      - master
+on: [release]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,8 +16,20 @@ jobs:
       - run: npm i
       - run: npm test
 
+  build_and_commit:
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+       - uses: actions/checkout@v2
+       - uses: actions/setup-node@v1
+       - run: npm i
+       - run: npm build
+       - uses: EndBug/add-and-commit@v4.4.0
+         with:
+           add: './dist'
+       
   publish-npm:
-    needs: build
+    needs: [build_and_commit]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
