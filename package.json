@@ -1,0 +1,7 @@
+{
+  "name": "gh-actions-tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "RayhanHamada <hamadadev2016@gmail.com>",
+  "license": "MIT"
+}
