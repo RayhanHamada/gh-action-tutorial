@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import actionTut from "../src";
+import { actionTut } from "../src";
 
 describe("index.js", function () {
   it("actionTut function should return a string", function () {
