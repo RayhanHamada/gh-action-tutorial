@@ -8,8 +8,8 @@ module.exports = {
       'yarn lint',
       'yarn fmt',
       'yarn test',
-      'yarn build',
-      'git add dist',
+      // 'yarn build',
+      // 'git add dist',
     ]),
   },
 };
