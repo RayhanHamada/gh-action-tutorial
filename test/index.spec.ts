@@ -6,6 +6,10 @@ describe('index.js', function () {
     expect(actionTut()).is.a('string');
   });
 
+  it('actionTut should be a function', function () {
+    expect(actionTut).to.be.a('function');
+  });
+
   it('actionTut2 function should return "Something Awesome"', function () {
     expect(actionTut2()).to.be.eq('Something Awesome');
   });
@@ -13,8 +17,4 @@ describe('index.js', function () {
   it('actionTut2 function should be a function', function () {
     expect(actionTut).is.a('function');
   });
-  // change
-  // change
-  // change
-  // change
 });
