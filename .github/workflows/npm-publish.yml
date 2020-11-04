@@ -29,6 +29,10 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: npm run build
+      - uses: JesseTG/rm@v1.0.0
+        with:
+        # The file path to remove
+          path: ./test
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{secrets.NPM_TOKEN}}
